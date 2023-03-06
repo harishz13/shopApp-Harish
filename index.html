@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <nav>
+    <ul>
+           
+        <li><a href="#">Me Shop</a></li>
+        <li style="float:right"><a href="#" id="myCart">My Cart</a></li>
+        <li style="float:right"><a href="#" id="home">Home</a></li>
+        <li style="float:right"><a href="#" id="login">Login</a></li>
+        <li style="float:right"><a href="#" id="signUp">Signup</a></li>
+    </ul>
+    </nav>
+    <h1>ME SHOP</h1>
+    <h3>Your First Shop Build on HTML,CSS AND JAVASCRIPT</h3>
+    <button id="lgn">Login</button>
+    <button id="sgu">Signup</button>
+    
+    <div class="products">
+            
+        <div class="product">
+            <div class="image">
+                <img src="image 1 (1).png" alt="">
+            </div>
+            <div class="namePrice">
+                <h3>Shirt</h3>
+                <span> 150.99</span>
+            </div>
+            <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="bay">
+                <button> buy now </button>
+            </div>
+        </div>
+
+       <img src="undraw_web_shopping_re_owap 1.png" id="bg" class="bg" alt="" >
+
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js" integrity="sha512-2bMhOkE/ACz21dJT8zBOMgMecNxx0d37NND803ExktKiKdSzdwn+L7i9fdccw/3V06gM/DBWKbYmQvKMdAA9Nw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+   <script>
+        const signUp = document.getElementById("signUp");
+        const login = document.getElementById("login");
+        const lgnBtn = document.getElementById("lgn");
+        const sguBtn = document.getElementById("sgu");
+        const cart = document.getElementById("myCart");
+
+        signUp.addEventListener('click',()=>{
+          window.location.href = "./signup.html"
+        })
+        login.addEventListener('click',()=>{
+          window.location.href = "./login.html"
+        })
+        lgnBtn.addEventListener('click',()=>{
+            window.location.href = "./login.html"
+        })
+        sguBtn.addEventListener('click',()=>{
+            window.location.href = "./signup.html"
+        })
+        cart.addEventListener('click',()=>{
+            window.location.href = "./myCartPage.html"
+        })
+
+   </script>
+</body>
+</html>

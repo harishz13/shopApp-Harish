@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <h1>My Profile</h1>
+
+<form id="change-password-form">
+   <input type="text" placeholder="First Name" >
+   <input type="text" placeholder="Last Name" >
+  
+  <input type="password" id="old-password"  placeholder="Old Password" required id="old-pass">
+  <input type="password" id="new-password" placeholder=" Password" id="new-pass" required>
+  
+  <input type="password" id="confirm-new-password" placeholder="Confirm Password"  id="new-confirm-pass" required><br>
+ 
+  <button onclick="changePassword()">Save info</button>
+</form>
+
+<button id="logout-btn">Logout</button>
+
+<script>
+   const logout = document.getElementById("logout-btn");
+  function changePassword() {
+  var currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  var oldPass = document.getElementById("old-pass").value;
+  var newPass = document.getElementById("new-pass").value;
+  var newConfirmPass = document.getElementById("new-confirm-pass").value;
+
+  if (oldPass === currentUser.password) {
+    if (newPass === newConfirmPass && newPass !== oldPass) {
+      // editing the currentUserObj
+      currentUser.password = newPass;
+      localStorage.setItem("currentUser", JSON.stringify(currentUser));
+
+      //   editing the users array
+      var users = JSON.parse(localStorage.getItem("users"));
+      var allUsersExceptCurrent = users.filter(
+        (user) => user.email != currentUser.email
+      );
+      var newUser = {
+        email: currentUser.email,
+        password: currentUser.password,
+      };
+      allUsersExceptCurrent.push(newUser);
+      localStorage.setItem("users", JSON.stringify(allUsersExceptCurrent));
+    } else if (oldPass === newPass) {
+    alert("Your old password should not be your new password");
+    } else if (newPass != newConfirmPass) {
+      
+        alert("Your new password does not match your new confirmation password");
+    }
+  } else {
+    
+      alert("Your old password does not match");
+  }
+}
+
+  logout.addEventListener('click',()=>{
+    window.localStorage.removeItem("currentUser");
+    window.location.href = "./login.html"
+  })
+
+</script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <nav>
+        
+        <ul>
+           
+            <li><a href="#">Me Shop</a></li>
+            <li style="float:right"><a href="#" id="myCart">My Cart</a></li>
+            <li style="float:right"><a href="#" id="home">Home</a></li>
+            <li style="float:right"><a href="#" id="login">Login</a></li>
+            <li style="float:right"><a href="#" id="signUp">Signup</a></li>
+           
+
+        </ul>
+        <h1>Login</h1>
+    </nav>
+    <form id="login-form">
+        <label for="email">Email:</label>
+        <input type="email" id="email" required><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" required><br>
+        <button type="submit">Login</button>
+      </form>
+      
+      <script>
+        const signUp = document.getElementById("signUp");
+        const login = document.getElementById("login");
+        const lgnBtn = document.getElementById("lgn");
+        const sguBtn = document.getElementById("sgu");
+        const cart = document.getElementById("myCart");
+        const home = document.getElementById("home");
+
+        signUp.addEventListener('click',()=>{
+          window.location.href = "./signup.html"
+        })
+        login.addEventListener('click',()=>{
+          window.location.href = "./login.html"
+        })
+        lgnBtn.addEventListener('click',()=>{
+            window.location.href = "./login.html"
+        })
+        sguBtn.addEventListener('click',()=>{
+            window.location.href = "./signup.html"
+        })
+        cart.addEventListener('click',()=>{
+            window.location.href = "./myCartPage.html"
+        })
+        home.addEventListener('click',()=>{
+            window.location.href = "./index.html"
+        })
+
+      
+        loginForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+      
+          const email = document.getElementById("email").value;
+          const password = document.getElementById("password").value;
+      
+          const users = JSON.parse(localStorage.getItem("users")) || [];
+      
+          const user = users.find(
+            (u) => u.email === email && u.password === password
+          );
+      
+          if (!user) {
+            alert("Invalid email or password");
+            return;
+          }
+      
+          const currentUser = {
+            name: user.name,
+            email: user.email,
+            password: user.password,
+            token: Math.random().toString(36).substr(2, 16),
+          };
+      
+          localStorage.setItem("currentUser", JSON.stringify(currentUser));
+      
+          alert("Login successful!");
+          window.location.href = "./profile.html";
+        });
+      </script>
+</body>
+</html>

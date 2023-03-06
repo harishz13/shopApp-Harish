@@ -1,0 +1,167 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+nav{
+    padding-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  h1{
+    margin-top: 30px;
+    margin-bottom: 18px;
+    margin-left: 80px;
+  }
+  h3{
+    margin-left: 30px;
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  li a:hover {
+    background-color: #111;
+  }
+
+  .info{
+    
+    width: 28%;
+    text-align: center;
+    padding: 1.3em;
+    margin-bottom: 2em;
+    box-shadow: 5px 5px 20px 5px black;
+  }
+  #size{
+    margin-left: 75px;
+  }
+
+  img#bg {
+    position: fixed;
+    bottom: 80px;
+    right: 140px;
+    width: 900px;
+}
+#lgn{
+  margin-top: 25px;
+  background-color: black;
+  color: white;
+  padding: 10px 28px 10px 28px;
+  border-radius: 2px;
+  margin-left: 80px;
+  margin-bottom: 25px;
+  
+
+}
+#sgu{
+  margin-top: 25px;
+  background-color: white;
+  color: black;
+  padding: 10px 25px 10px 25px;
+  border-radius: 2px;
+  margin-left: 80px;
+  margin-bottom: 25px;
+}
+#crt{
+  margin-top: 25px;
+  background-color: black;
+  color: white;
+  padding: 5px 37% 5px 37%;
+  border-radius: 10px;
+  margin-left: 10px;
+  
+}
+.products{
+  width: 450px;
+  align-self: center;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.product{
+  position: relative;
+  background-color: var(--sectionBack);
+  width: 350px;
+  height: 100%;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, .3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 20px 40px;
+  border-radius: 10px;
+  transition: .3s;
+}
+.product:hover{
+  transform: translateY(-15px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+.image{
+  width:100%;
+  height: 60%;
+  display: grid;
+  place-content: center;
+}
+.image img{
+  width: 240px;
+}
+.namePrice{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.namePrice h3{
+  font-size: 2em;
+  text-transform: capitalize;
+ 
+}
+.namePrice span{
+  font-size: 1.5em;
+}
+.product p{
+  font-size: 18px;
+  line-height: 25px;
+}
+.stars svg{
+  font-size: 1.3em;
+  margin-top: 50px;
+  
+}
+.bay{
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+.bay button{
+  padding: 10px 20px;
+  border-radius: 7px;
+  border: none;
+  background-color: black;
+  color: white;
+  font-size: 18px;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: .5s;
+  margin-bottom: 10px;
+}
+.bay button:hover{
+  transform: scale(1.1);
+}
